@@ -9,12 +9,14 @@ class ListContainer extends React.Component {
   }
 
   render() {
-    return <List images={this.props.images} />;
+    console.log("List container props: ", this.props);
+    return <List images={this.props.images} user={this.props.user} />;
   }
 }
 
 function mapStateToProps(state) {
-  return { images: state.images };
+  // this says, I think, props.images of this component should be taken from state.images in the store.
+  return { images: state.images, user: state.user };
 }
 
 const mapDispatchToProps = { getImages };
