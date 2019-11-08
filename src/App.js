@@ -1,8 +1,16 @@
-import React from "react";
-import "./App.css";
+import React, { Component } from "react";
+import store from "./store";
+import { Provider } from "react-redux";
+import ListContainer from "./components/ListContainer";
 
-function App() {
-  return <div className="App">APAPAPAP</div>;
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <ListContainer />
+      </Provider>
+    );
+  }
 }
 
 export default App;
